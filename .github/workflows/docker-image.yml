@@ -21,6 +21,6 @@ jobs:
       run: |
         docker login -u $DOCKER_USER -p $DOCKER_PASSWORD
     - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag hanisic/mysite:$(date +%s)
+      run: docker build . --file Dockerfile --tag hanisic/mysite:django_image
     - name: Docker Push
-      run: docker push ${{secrets.DOCKER_USER}}/mysite
+      run: docker push ${{secrets.DOCKER_USER}}/mysite:django_image
